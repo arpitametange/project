@@ -1,0 +1,15 @@
+<div *ngIf="movieData" class="movie-card">
+  <h2>{{ movieData.media.title }} ({{ movieData.media.year }})</h2>
+  <img [src]="movieData.media.poster" alt="{{ movieData.media.title }}" class="poster" />
+
+  <p><strong>TMDb ID:</strong> {{ movieData.tmdbId }}</p>
+  <p><strong>IMDb ID:</strong> {{ movieData.imdbId }}</p>
+  <p><strong>Last Updated:</strong> {{ getLastUpdatedDate() }}</p>
+
+  <h3>Ratings:</h3>
+  <ul>
+    <li><strong>IMDb:</strong> {{ movieData.ratings.imdb }}</li>
+    <li><strong>Rotten Tomatoes:</strong> {{ movieData.ratings.rottenTomatoes }}%</li>
+    <li><strong>Metacritic:</strong> {{ movieData.ratings.metacritic }}</li>
+  </ul>
+</div>
